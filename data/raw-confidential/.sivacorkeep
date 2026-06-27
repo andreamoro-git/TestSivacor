@@ -1,0 +1,4 @@
+# Placeholder so this directory is retained in the SIVACOR output.
+# The confidential file (firm_survey.dta) is excluded via .sivacorignore
+# and is not redistributed. This file is NOT matched by any ignore rule,
+# so it survives and keeps the (otherwise empty) folder in the output.

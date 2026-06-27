@@ -13,3 +13,6 @@
 /data/derived/*.dta
 /output/tables/*.txt
 /output/figures/*.png
+
+# Downloaded sivacor output (not part of the package)
+Output_From_Sivacor*

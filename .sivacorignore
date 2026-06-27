@@ -3,5 +3,12 @@
 # present during execution (so the code runs); they are simply not
 # republished in the certified output.
 
-# Confidential firm survey microdata (Data Use Agreement; not redistributable)
-data/raw-confidential/
+# Confidential firm survey microdata (Data Use Agreement; not redistributable).
+# Exclude everything in the folder, then re-include the .sivacorkeep placeholder
+# via gitignore-style negation so the directory is retained in the output while
+# the confidential data is withheld.
+data/raw-confidential/*.dta
+!data/raw-confidential/.sivacorkeep
+
+# Git directory-placeholder files: no meaning in the distributed package
+.gitkeep
