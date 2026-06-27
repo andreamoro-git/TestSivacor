@@ -70,31 +70,12 @@ The `data/derived/` and `output/` subfolders are recreated by `main.do` if absen
 
 ## Instructions to replicators
 
-The raw data are **provided** with the package (the confidential survey file is
-included so the code can run; `.sivacorignore` keeps it out of the redistributed
-output). The reproducible pipeline does **not** rebuild the data.
 
+0. Generate data with make_data.do
 1. Designate `main.do` as the main do-file.
 2. Run it. It executes `02_merge.do` then `03_analysis.do`: merge → analysis,
    producing the table and figure.
-
-There is nothing to download and no path to edit. `make_data.do` (at the package
-root) is the author-only script that originally built the raw data; replicators
-do not need to run it.
-
-## List of outputs
-
-| Output | Program | File |
-|--------|---------|------|
-| Table 1 — OLS of log revenue on inputs | `code/03_analysis.do` | `output/tables/table1_regression.txt` |
-| Figure 1 — Revenue vs. capital scatter + fit | `code/03_analysis.do` | `output/figures/figure1_revenue_capital.png` |
-
-## What the analysis does
-
-`log_revenue` is regressed on `log_capital`, `log_employment`, and industry
-fixed effects. Because the data are simulated from
-`log_revenue = 2 + 0.5·log_capital + 0.4·log_employment + industry shifter + noise`,
-the estimated coefficients should recover those values up to sampling error.
+3. Zip the thing and submit it to sivacor
 
 ## References
 
