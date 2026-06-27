@@ -23,6 +23,7 @@ global rootdir "`c(pwd)'"
 
 global code     "$rootdir/code"
 global rawdata  "$rootdir/data/raw"
+global rawconf  "$rootdir/data/raw-confidential"
 global derived  "$rootdir/data/derived"
 global tables   "$rootdir/output/tables"
 global figures  "$rootdir/output/figures"
@@ -30,18 +31,21 @@ global figures  "$rootdir/output/figures"
 * Create output folders if missing (idempotent: safe to re-run)
 cap mkdir "$rootdir/data"
 cap mkdir "$rawdata"
+cap mkdir "$rawconf"
 cap mkdir "$derived"
 cap mkdir "$rootdir/output"
 cap mkdir "$tables"
 cap mkdir "$figures"
 
-* Fixed seed for full reproducibility
-set seed 20260627
-
 *----------------------------------------------------------------------
-* Run the pipeline in order
+* Raw data are PROVIDED with the package and treated as given inputs:
+*   data/raw/firm_registry.dta             public
+*   data/raw-confidential/firm_survey.dta  confidential -- excluded from
+*        the redistributed output by .sivacorignore, but present during
+*        the run so the code executes normally.
+* Both are built by make_data.do at the package root, which is documented
+* for transparency but is NOT part of this reproducible pipeline.
 *----------------------------------------------------------------------
-do "$code/01_make_data.do"
 do "$code/02_merge.do"
 do "$code/03_analysis.do"
 

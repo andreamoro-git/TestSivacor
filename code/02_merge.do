@@ -11,7 +11,9 @@
 
 use "$rawdata/firm_registry.dta", clear
 
-merge 1:1 firm_id using "$rawdata/firm_survey.dta"
+* firm_survey lives in the confidential folder (see .sivacorignore); it is
+* present during the run, so the merge works normally.
+merge 1:1 firm_id using "$rawconf/firm_survey.dta"
 
 * report the merge outcome to the log, then keep matched firms only
 tab _merge

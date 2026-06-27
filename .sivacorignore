@@ -1,0 +1,7 @@
+# .sivacorignore -- gitignore-style patterns for files to EXCLUDE from the
+# redistributed replication package / TRO output. Matched files are still
+# present during execution (so the code runs); they are simply not
+# republished in the certified output.
+
+# Confidential firm survey microdata (Data Use Agreement; not redistributable)
+data/raw-confidential/

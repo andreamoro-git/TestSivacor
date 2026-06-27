@@ -4,10 +4,12 @@
 # macOS
 .DS_Store
 
-# Generated data (reproduced by main.do — do not commit)
+# Confidential data: never commit (also excluded from the sivacor output
+# via .sivacorignore)
+/data/raw-confidential/*.dta
+
+# Other data and generated outputs (rebuildable: run make_data.do, then main.do)
 /data/raw/*.dta
 /data/derived/*.dta
-
-# Generated outputs (reproduced by main.do — do not commit)
 /output/tables/*.txt
 /output/figures/*.png
