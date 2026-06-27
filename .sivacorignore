@@ -7,7 +7,7 @@
 # Exclude everything in the folder, then re-include the .sivacorkeep placeholder
 # via gitignore-style negation so the directory is retained in the output while
 # the confidential data is withheld.
-data/raw-confidential/*.dta
+data/raw-confidential/*
 !data/raw-confidential/.sivacorkeep
 
 # Git directory-placeholder files: no meaning in the distributed package
