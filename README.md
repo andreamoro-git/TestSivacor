@@ -17,8 +17,7 @@ no absolute or hardcoded paths.
 
 ## Data availability and provenance statement
 
-All data are **simulated** by the authors — there are no real human subjects,
-surveys, or third-party sources. The data are constructed by `make_data.do`
+The data are constructed by `make_data.do`
 (Stata's `runiform()` / `rnormal()` with a fixed seed).
 
 To exercise SIVACOR's handling of non-redistributable data, this package
@@ -70,12 +69,11 @@ The `data/derived/` and `output/` subfolders are recreated by `main.do` if absen
 
 ## Instructions to replicators
 
-
-0. Generate data with make_data.do
-1. Designate `main.do` as the main do-file.
-2. Run it. It executes `02_merge.do` then `03_analysis.do`: merge → analysis,
-   producing the table and figure.
-3. Zip the thing and submit it to sivacor
+0. Generate data running make_data.do
+1. Zip the package
+2. Upload it to sivacor.
+3. Select a Stata/17 image and designate `main.do` as the main do-file.
+4. Run it, download and inspect the downloaded package for results and verify missing confidential data.
 
 ## References
 
